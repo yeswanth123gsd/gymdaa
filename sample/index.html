@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservation History</title>
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: white;
+      color: #00796b;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    header nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-right: 50px;
+    }
+
+    header nav a {
+      color: #00796b;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+      color: #003f5c;
+    }
+
+    .container {
+      max-width: 95%;
+      margin: 10px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #00796b;
+      font-size: 1.2em;
+    }
+
+    /* Table Styles */
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table thead {
+      background-color: #00796b;
+      color: white;
+    }
+
+    table th, table td {
+      text-align: left;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    table th {
+      position: sticky;
+      top: 0;
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Pagination */
+    .pagination {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .pagination a {
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      text-decoration: none;
+      color: #00796b;
+    }
+
+    .pagination a.active {
+      background-color: #00796b;
+      color: white;
+    }
+
+    .pagination a:hover {
+      background-color: #00574b;
+      color: white;
+    }
+
+    /* Search bar */
+    .search-container {
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-container input[type="search"] {
+      padding: 5px;
+      width: 100%;
+      max-width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      header nav {
+        justify-content: flex-start;
+      }
+
+      .container {
+        padding: 15px;
+      }
+
+      table th, table td {
+        font-size: 0.8em;
+        padding: 5px;
+      }
+
+      h2 {
+        font-size: 1em;
+      }
+
+      .pagination a {
+        padding: 5px;
+        font-size: 0.8em;
+      }
+
+      .search-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .search-container label, .search-container input[type="search"] {
+        margin-bottom: 10px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="margin-left:100px;"><img width="140px" src="image.png" alt=""></h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">History</a>
+      <a href="#">Logout</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Reservation History</h2>
+    <div class="search-container">
+      <label>
+        Show 
+        <select>
+          <option>10</option>
+          <option>20</option>
+          <option>30</option>
+        </select> 
+        entries
+      </label>
+      <input type="search" placeholder="Search">
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Reference No.</th>
+            <th>Stadium</th>
+            <th>Playground</th>
+            <th>Court</th>
+            <th>Reserved Date</th>
+            <th>Time Slot</th>
+            <th>Status</th>
+            <th>Remarks</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Add your table rows here -->
+          <tr>
+            <td>20241220660164</td>
+            <td>Fitness & Performance Centre</td>
+            <td>Fitness & Performance Centre</td>
+            <td>room 1</td>
+            <td>21-Dec-2024</td>
+            <td>06:00 AM to 07:00 AM</td>
+            <td>Approved</td>
+            <td>Approved</td>
+            <td><a href="yes.html"><center><img src="eye.png" width="17px" alt=""></center></a></td>
+          </tr>
+          <tr>
+            <td>20241220660164</td>
+            <td>Fitness & Performance Centre</td>
+            <td>Fitness & Performance Centre</td>
+            <td>room 1</td>
+            <td>21-Dec-2024</td>
+            <td>06:00 AM to 07:00 AM</td>
+            <td>Approved</td>
+            <td>Approved</td>
+            <td><a href="yes.html"><center><img src="eye.png" width="17px" alt=""></center></a></td>
+        </tr>
+        <tr>
+            <td>20241220660163</td>
+            <td>Fitness & Performance Centre</td>
+            <td>Fitness & Performance Centre</td>
+            <td>room 1</td>
+            <td>18-Dec-2024</td>
+            <td>06:00 AM to 07:00 AM</td>
+            <td>Approved</td>
+            <td>Approved</td>
+            <td><a href="yes.html"><center><img src="eye.png" width="17px" alt=""></center></a></td>
+        </tr>
+        <tr>
+            <td>20241220660162</td>
+            <td>Fitness & Performance Centre</td>
+            <td>Fitness & Performance Centre</td>
+            <td>room 1</td>
+            <td>15-Dec-2024</td>
+            <td>06:00 AM to 07:00 AM</td>
+            <td>Approved</td>
+            <td>Approved</td>
+            <td><a href="yes.html"><center><img src="eye.png" width="17px" alt=""></center></a></td>
+        </tr>
+        <tr>
+            <td>20241220660161</td>
+            <td>Fitness & Performance Centre</td>
+            <td>Fitness & Performance Centre</td>
+            <td>room 1</td>
+            <td>12-Dec-2024</td>
+            <td>06:00 AM to 07:00 AM</td>
+            <td>Approved</td>
+            <td>Approved</td>
+            <td><a href="yes.html"><center><img src="eye.png" width="17px" alt=""></center></a></td>
+        </tr>
+        <tr>
+            <td>20241220660160</td>
+            <td>Fitness & Performance Centre</td>
+            <td>Fitness & Performance Centre</td>
+            <td>room 1</td>
+            <td>09-Dec-2024</td>
+            <td>06:00 AM to 07:00 AM</td>
+            <td>Approved</td>
+            <td>Approved</td>
+            <td><a href="yes.html"><center><img src="eye.png" width="17px" alt=""></center></a></td>
+        </tr>
+        <tr>
+            <td>20241220660159</td>
+            <td>Fitness & Performance Centre</td>
+            <td>Fitness & Performance Centre</td>
+            <td>room 1</td>
+            <td>06-Dec-2024</td>
+            <td>06:00 AM to 07:00 AM</td>
+            <td>Approved</td>
+            <td>Approved</td>
+            <td><a href="yes.html"><center><img src="eye.png" width="17px" alt=""></center></a></td>
+        </tr>
+        <tr>
+            <td>20241220660158</td>
+            <td>Fitness & Performance Centre</td>
+            <td>Fitness & Performance Centre</td>
+            <td>room 1</td>
+            <td>03-Dec-2024</td>
+            <td>06:00 AM to 07:00 AM</td>
+            <td>Approved</td>
+            <td>Approved</td>
+            <td><a href="yes.html"><center><img src="eye.png" width="17px" alt=""></center></a></td>
+        </tr>
+        <tr>
+            <td>20241220660157</td>
+            <td>Fitness & Performance Centre</td>
+            <td>Fitness & Performance Centre</td>
+            <td>room 1</td>
+            <td>30-Nov-2024</td>
+            <td>06:00 AM to 07:00 AM</td>
+            <td>Approved</td>
+            <td>Approved</td>
+            <td><a href="yes.html"><center><img src="eye.png" width="17px" alt=""></center></a></td>
+        </tr>
+        <tr>
+            <td>20241220660156</td>
+            <td>Fitness & Performance Centre</td>
+            <td>Fitness & Performance Centre</td>
+            <td>room 1</td>
+            <td>27-Nov-2024</td>
+            <td>06:00 AM to 07:00 AM</td>
+            <td>Approved</td>
+            <td>Approved</td>
+            <td><a href="yes.html"><center><img src="eye.png" width="17px" alt=""></center></a></td>
+        </tr>
+        <tr>
+            <td>20241220660155</td>
+            <td>Fitness & Performance Centre</td>
+            <td>Fitness & Performance Centre</td>
+            <td>room 1</td>
+            <td>24-Nov-2024</td>
+            <td>06:00 AM to 07:00 AM</td>
+            <td>Approved</td>
+            <td>Approved</td>
+            <td><a href="yes.html"><center><img src="eye.png" width="17px" alt=""></center></a></td>
+        </tr>
+        
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-left: 0;" class="pagination">
+      <a href="#">Previous</a>
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">Next</a>
+    </div>
+  </div>
+</body>
+</html>
